@@ -69,6 +69,7 @@ ul li:hover {
 button.delete {
   color: #fff;
   background-color: #dc3545;
+  margin-right: 20px;
 }
 
 button.delete:hover {

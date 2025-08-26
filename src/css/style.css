@@ -88,8 +88,8 @@ ul li:hover {
 
 button.delete {
   background-color: #dc3545;
-
   color: white;
+  margin-right: 20px;
 }
 
 button.delete:hover {

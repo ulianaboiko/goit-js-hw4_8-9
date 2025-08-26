@@ -677,6 +677,17 @@ const bookmarkList = document.querySelector("#bookmarkList");
 const handleAddingBookmark = ()=>{
     const inputValue = bookmarkInput.value.trim();
     if (inputValue === "") return alert("\u0412\u0432\u0435\u0434\u0456\u0442\u044C URL!");
+    const newItem = document.createElement("li");
+    const newLink = document.createElement("a");
+    newLink.href = inputValue;
+    newLink.textContent = inputValue;
+    const newBtn = document.createElement("button");
+    newBtn.textContent = "\u2716";
+    newBtn.classList.add("delete");
+    newBtn.addEventListener("click", ()=>newItem.remove());
+    newItem.appendChild(newLink);
+    newItem.appendChild(newBtn);
+    bookmarkList.append(newItem);
 };
 addBookmarkBtn.addEventListener("click", handleAddingBookmark);
 
