@@ -1,3 +1,5 @@
+import { save, load, remove, clear } from "../storage/storage";
+
 const bookmarkInput = document.querySelector("#bookmarkInput");
 const addBookmarkBtn = document.querySelector("#addBookmarkBtn");
 const bookmarkList = document.querySelector("#bookmarkList");
@@ -23,3 +25,6 @@ const handleAddingBookmark = () => {
 };
 
 addBookmarkBtn.addEventListener("click", handleAddingBookmark);
+
+const handleSaveBtn = 2;
+addBookmarkBtn.addEventListener("input", handleSaveBtn);
