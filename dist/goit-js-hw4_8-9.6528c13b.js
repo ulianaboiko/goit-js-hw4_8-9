@@ -681,18 +681,24 @@ const handleAddingBookmark = ()=>{
     const newItem = document.createElement("li");
     const newLink = document.createElement("a");
     newLink.href = inputValue;
+    newLink.classList.add("bookmark-link");
     newLink.textContent = inputValue;
     const newBtn = document.createElement("button");
     newBtn.textContent = "\u2716";
     newBtn.classList.add("delete");
-    newBtn.addEventListener("click", ()=>newItem.remove());
+    const handleRemove = ()=>{
+        newItem.remove();
+        const bookmarkData = (0, _storage.load)("bookmarkData");
+        (0, _storage.save)("bookmarkData", bookmarkData);
+    };
+    newBtn.addEventListener("click", handleRemove);
     newItem.appendChild(newLink);
     newItem.appendChild(newBtn);
     bookmarkList.append(newItem);
+// const bookmarkData = load("bookmarkData");
+// save("bookmarkData", bookmarkData);
 };
 addBookmarkBtn.addEventListener("click", handleAddingBookmark);
-const handleSaveBtn = 2;
-addBookmarkBtn.addEventListener("input", handleSaveBtn);
 
 },{"../storage/storage":"cKslY"}],"cKslY":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
